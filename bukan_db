@@ -1,0 +1,32 @@
+create database kantin_db;
+
+use kantin_db;
+
+CREATE TABLE orders (
+  id INT AUTO_INCREMENT PRIMARY KEY not null,
+  item VARCHAR(100) not null,
+  quantity INT not null,
+  total_price INT not null,
+  order_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null
+);
+
+CREATE TABLE messages (
+  id INT AUTO_INCREMENT PRIMARY KEY not null,
+  name VARCHAR(100) not null,
+  email VARCHAR(100) not null,
+  message TEXT not null,
+  sent_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null
+);
+
+CREATE TABLE menu_items (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100),
+  price INT,
+  stock INT
+);
+
+INSERT INTO menu_items (name, price, stock) VALUES
+('Nasi Goreng', 12000, 10),
+('Batagor', 10000, 5),
+('Es_Teh', 9000, 5),
+('Jus_Jeruk', 10000, 5);
